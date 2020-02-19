@@ -1,0 +1,15 @@
+// DESEncryption.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+#include<vector>
+#include <iostream>
+#include <vector>
+#include "Formatter.h"
+
+int main()
+{
+    std::string input = "hello";
+
+    Formatter formatter();
+
+    std::vector<std::string> output = formatter->StringToHexArray(input);
+}
