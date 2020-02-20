@@ -9,7 +9,13 @@ int main()
 {
     std::string input = "hello";
 
-    Formatter formatter();
+    std::cout << input << std::endl;
 
-    std::vector<std::string> output = formatter->StringToHexArray(input);
+    Formatter formatter;
+
+    std::vector<std::string> output = formatter.StringToHexArray(input);
+
+    for (std::string str : output) {
+        std::cout << str << std::endl;
+    }
 }
