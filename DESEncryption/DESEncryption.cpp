@@ -13,7 +13,7 @@ int main()
 
     Formatter formatter;
 
-    std::vector<std::string> output = formatter.StringToHexArray(input);
+    std::vector<std::string> output = formatter.StringToBinaryArray(input);
 
     for (std::string str : output) {
         std::cout << str << std::endl;
