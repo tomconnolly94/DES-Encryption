@@ -149,9 +149,13 @@
   <ItemGroup>
     <ClCompile Include="DESEncryption.cpp" />
     <ClCompile Include="Formatter.cpp" />
+    <ClCompile Include="KeyCalculator.cpp" />
+    <ClCompile Include="KeyCalculator.h" />
+    <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Formatter.h" />
+    <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

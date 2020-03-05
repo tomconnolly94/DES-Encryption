@@ -3,19 +3,27 @@
 #include<vector>
 #include <iostream>
 #include <vector>
+
 #include "Formatter.h"
+#include "KeyCalculator.h"
 
 int main()
 {
-    std::string input = "hello";
 
-    std::cout << input << std::endl;
+	Formatter formatter;
+	KeyCalculator keycalculator;
 
-    Formatter formatter;
+	std::string key = "qwertyui";
 
-    std::vector<std::string> output = formatter.StringToBinaryArray(input);
+	std::cout << key << std::endl;
 
-    for (std::string str : output) {
-        std::cout << str << std::endl;
-    }
+	key = formatter.StringToBinaryArray(key);
+
+	key = keycalculator.InitalPermutation(key);
+	std::vector<std::string> roundKeys = keycalculator.CalculateRoundKeys(key);
+
+	for (int roundKeysIndex = 0; roundKeysIndex < roundKeys.size(); ++roundKeysIndex) {
+		std::cout << roundKeys[roundKeysIndex] << std::endl;
+		std::cout << sizeof(roundKeys[roundKeysIndex]) << std::endl;
+	}
 }

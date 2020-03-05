@@ -1,22 +1,21 @@
-#include<vector>
 #include <iostream>
 #include <sstream>
-#include <iomanip>  
+#include <iomanip>
+#include <bitset>
 
 #include "Formatter.h"
-#include <bitset>
 
 Formatter::Formatter() {};
 
-std::vector<std::string> Formatter::StringToBinaryArray(std::string input) {
+std::string Formatter::StringToBinaryArray(std::string input) {
 
-    std::vector<std::string> output;
+    std::string output;
 
     for (size_t i = 0;i < input.length(); ++i)
     {
         std::string charRep = CharToBinary(input[i]);
 
-        output.push_back(charRep);
+        output += charRep;
     }
     return output;
 }
