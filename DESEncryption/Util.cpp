@@ -5,7 +5,8 @@ std::string Util::ExecutePermutation(std::string keyInput, std::vector<int> perm
 	std::string outputKey = "";
 
 	for (int index = 0; index < permutationTable.size(); ++index) {
-		char translation = keyInput[(const unsigned __int64)permutationTable[index] - 1];
+		const unsigned __int64 keyIndex = permutationTable[index];
+		char translation = keyInput[keyIndex - 1];
 		outputKey += keyInput[(const unsigned __int64)permutationTable[index] - 1];
 	}
 	return outputKey;

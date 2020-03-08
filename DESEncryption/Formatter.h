@@ -5,7 +5,9 @@
 class Formatter {
 public:
 	Formatter();
-	std::string StringToBinaryArray(std::string);
+	std::string AsciiToBinString(std::string);
+	std::string BinStringToAscii(std::string);
 private:
-	std::string CharToBinary(char input);
+	std::string CharToBinString(char input);
+	char BinStringToChar(std::string input);
 };

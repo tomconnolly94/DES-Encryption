@@ -7,23 +7,38 @@
 
 Formatter::Formatter() {};
 
-std::string Formatter::StringToBinaryArray(std::string input) {
+std::string Formatter::AsciiToBinString(std::string input) {
 
     std::string output;
 
     for (size_t i = 0;i < input.length(); ++i)
     {
-        std::string charRep = CharToBinary(input[i]);
+        std::string charRep = CharToBinString(input[i]);
 
         output += charRep;
     }
     return output;
 }
 
-std::string Formatter::CharToBinary(char input) {
-    char buffer[33]; //the variable you will store i's new value (binary value) in
-    _itoa_s(input, buffer, 2);
-    printf("binary: %s\n", buffer);
-    buffer[32] = NULL;
-    return buffer;
+std::string Formatter::CharToBinString(char input) {
+    std::bitset<8> temp(input);
+    return temp.to_string();
+}
+
+std::string Formatter::BinStringToAscii(std::string input) {
+
+    std::string output;
+
+    for (size_t i = 0;i < input.length(); ++i)
+    {
+        std::string charRep = CharToBinString(input[i]);
+
+        output += charRep;
+    }
+    return output;
+}
+
+char Formatter::BinStringToChar(std::string input) {
+    std::bitset<8> temp(input);
+    return temp.to_ulong();
 }
