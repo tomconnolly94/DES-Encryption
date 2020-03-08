@@ -6,24 +6,23 @@
 
 #include "Formatter.h"
 #include "KeyCalculator.h"
+#include "Encryptor.h"
 
 int main()
 {
-
+	//declare objects
 	Formatter formatter;
 	KeyCalculator keycalculator;
+	Encryptor encryptor;
 
+	//hardcode decimal key
 	std::string key = "qwertyui";
+	std::string input = "Hello my name is Tom.";
 
-	std::cout << key << std::endl;
-
+	//calculate all required keys
 	key = formatter.AsciiToBinString(key);
-
 	key = keycalculator.InitalPermutation(key);
 	std::vector<std::string> roundKeys = keycalculator.CalculateRoundKeys(key);
 
-	for (int roundKeysIndex = 0; roundKeysIndex < roundKeys.size(); ++roundKeysIndex) {
-		std::cout << roundKeys[roundKeysIndex] << std::endl;
-		std::cout << roundKeys[roundKeysIndex].length() << std::endl;
-	}
+
 }

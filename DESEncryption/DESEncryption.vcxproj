@@ -148,12 +148,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DESEncryption.cpp" />
+    <ClCompile Include="Encryptor.cpp" />
     <ClCompile Include="Formatter.cpp" />
     <ClCompile Include="KeyCalculator.cpp" />
     <ClCompile Include="KeyCalculator.h" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Encryptor.h" />
     <ClInclude Include="Formatter.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
