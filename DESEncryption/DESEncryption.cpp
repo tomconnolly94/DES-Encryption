@@ -24,5 +24,6 @@ int main()
 	key = keycalculator.InitalPermutation(key);
 	std::vector<std::string> roundKeys = keycalculator.CalculateRoundKeys(key);
 
-
+	//encrypt plaintext and capture output
+	std::string output = encryptor.Encrypt(input);
 }

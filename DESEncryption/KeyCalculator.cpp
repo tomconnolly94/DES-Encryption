@@ -21,9 +21,10 @@ std::string KeyCalculator::InitalPermutation(std::string keyInput) {
 
 
 std::vector<std::string> KeyCalculator::CalculateRoundKeys(std::string keyInput) {
-
-	std::string leftKey = keyInput.substr(0, 28);
-	std::string rightKey = keyInput.substr(28, 28);
+	
+	std::vector<std::string> splitKey = Util::HalfVector(keyInput);
+	std::string leftKey = splitKey[0];
+	std::string rightKey = splitKey[1];
 
 	// key shift table
 	int keyShiftTable[16] = {

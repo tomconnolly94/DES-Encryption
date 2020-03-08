@@ -19,3 +19,13 @@ std::string Util::BitShiftLeft(std::string shiftee, int numShifts) {
 
 	return shifted + movingBits;
 }
+
+std::vector<std::string> Util::HalfVector(std::string input) {
+
+	std::vector<std::string> output;
+	int halfLength = input.length() / 2;
+
+	output.push_back(input.substr(0, halfLength));
+	output.push_back(input.substr(halfLength, halfLength));
+	return output;
+}

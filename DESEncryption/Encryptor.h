@@ -4,5 +4,9 @@
 
 class Encryptor {
 public:
+	Encryptor();
+	std::string Encrypt(std::string input);
 private:
+	std::string ExecuteInitialPermutation(std::string input);
+	std::string SBoxPermutation(std::string input);
 };
