@@ -31,9 +31,20 @@ std::string Encryptor::ExecuteInitialPermutation(std::string input) {
 		63, 55, 47, 39, 31, 23, 15, 7
 	};
 
-	std::string output = Util::ExecutePermutation(input, permutationTable);
+	return Util::ExecutePermutation(input, permutationTable);
+}
 
+std::string Encryptor::ExpansionPermutation(std::string input) {
+	std::vector<int> expansionPermutationTable = { 
+		32, 1, 2, 3, 4, 5, 4, 5,
+		6, 7, 8, 9, 8, 9, 10, 11,
+		12, 13, 12, 13, 14, 15, 16, 17,
+		16, 17, 18, 19, 20, 21, 20, 21,
+		22, 23, 24, 25, 24, 25, 26, 27,
+		28, 29, 28, 29, 30, 31, 32, 1 
+	};
 
+	return Util::ExecutePermutation(input, expansionPermutationTable);
 }
 
 std::string Encryptor::SBoxPermutation(std::string input) {
