@@ -11,7 +11,6 @@
 int main()
 {
 	//declare objects
-	Formatter formatter;
 	KeyCalculator keycalculator;
 	Encryptor encryptor;
 
@@ -20,10 +19,20 @@ int main()
 	std::string input = "Hello my name is Tom.";
 
 	//calculate all required keys
-	key = formatter.AsciiToBinString(key);
+	key = Formatter::AsciiToBinString(key);
 	key = keycalculator.InitalPermutation(key);
 	std::vector<std::string> roundKeys = keycalculator.CalculateRoundKeys(key);
 
-	//encrypt plaintext and capture output
-	std::string output = encryptor.Encrypt(input);
+	//encrypt plaintext and capture output 
+	//IMPORTANT: input must be 64 bits long
+	std::vector<std::string> inputBlocks = Formatter::FormatInputForEncryption(input);
+	std::string output;
+
+	for (int inputBlockIndex = 0; inputBlockIndex < inputBlocks.size(); ++inputBlockIndex) {
+		output += encryptor.Encrypt(inputBlocks[inputBlockIndex], roundKeys);
+	}
+
+	output = Formatter::BinStringToAscii(output);
+
+	std::cout << "Ciphertext: " << output << std::endl;
 }

@@ -23,9 +23,37 @@ std::string Util::BitShiftLeft(std::string shiftee, int numShifts) {
 std::vector<std::string> Util::HalfVector(std::string input) {
 
 	std::vector<std::string> output;
-	int halfLength = input.length() / 2;
+	size_t halfLength = input.length() / 2;
 
 	output.push_back(input.substr(0, halfLength));
 	output.push_back(input.substr(halfLength, halfLength));
 	return output;
+}
+
+std::string Util::XOR(std::string inputA, std::string inputB){
+	std::string output = "";
+	for (int i = 0; i < inputA.size(); i++) {
+		if (inputA[i] == inputB[i]) {
+			output += "0";
+		}
+		else {
+			output += "1";
+		}
+	}
+	return output;
+}
+
+int Util::ConvertBinaryToDecimal(std::string strInput)
+{
+	long long input = std::stoll(strInput);
+
+	int decimalNumber = 0, i = 0, remainder;
+	while (input != 0)
+	{
+		remainder = input % 10;
+		input /= 10;
+		decimalNumber += remainder * pow(2, i);
+		++i;
+	}
+	return decimalNumber;
 }

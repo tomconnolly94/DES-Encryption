@@ -1,13 +1,13 @@
 #pragma once
 #include <string>
-#include<vector>
+#include <vector>
 
 class Formatter {
 public:
-	Formatter();
-	std::string AsciiToBinString(std::string);
-	std::string BinStringToAscii(std::string);
+	static std::string AsciiToBinString(std::string);
+	static std::string BinStringToAscii(std::string);
+	static std::vector<std::string> FormatInputForEncryption(std::string input);
 private:
-	std::string CharToBinString(char input);
-	char BinStringToChar(std::string input);
+	static std::string CharToBinString(char input);
+	static char BinStringToChar(std::string input);
 };
