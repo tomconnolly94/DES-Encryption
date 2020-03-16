@@ -1,13 +1,13 @@
 #include "Util.h"
 
-std::string Util::ExecutePermutation(std::string keyInput, std::vector<int> permutationTable) {
+std::string Util::ExecutePermutation(std::string input, std::vector<int> permutationTable) {
 
 	std::string outputKey = "";
 
 	for (int index = 0; index < permutationTable.size(); ++index) {
 		const unsigned __int64 keyIndex = permutationTable[index];
-		char translation = keyInput[keyIndex - 1];
-		outputKey += keyInput[(const unsigned __int64)permutationTable[index] - 1];
+		char translation = input[keyIndex - 1];
+		outputKey += input[(const unsigned __int64)permutationTable[index] - 1];
 	}
 	return outputKey;
 }
@@ -20,7 +20,7 @@ std::string Util::BitShiftLeft(std::string shiftee, int numShifts) {
 	return shifted + movingBits;
 }
 
-std::vector<std::string> Util::HalfVector(std::string input) {
+std::vector<std::string> Util::BisectString(std::string input) {
 
 	std::vector<std::string> output;
 	size_t halfLength = input.length() / 2;

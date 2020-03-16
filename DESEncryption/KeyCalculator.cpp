@@ -8,7 +8,7 @@ std::string KeyCalculator::InitalPermutation(std::string keyInput) {
 
 std::vector<std::string> KeyCalculator::CalculateRoundKeys(std::string keyInput) {
 	
-	std::vector<std::string> splitKey = Util::HalfVector(keyInput);
+	std::vector<std::string> splitKey = Util::BisectString(keyInput);
 	std::string leftKey = splitKey[0];
 	std::string rightKey = splitKey[1];
 

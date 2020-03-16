@@ -16,7 +16,7 @@ std::string Encryptor::Encrypt(std::string input, std::vector<std::string> round
 	input = ExecuteInitialPermutation(input);
 
 	//split data into left and right parts
-	std::vector<std::string> splitData = Util::HalfVector(input);
+	std::vector<std::string> splitData = Util::BisectString(input);
 	std::string leftPart = splitData[0];
 	std::string rightPart = splitData[1];
 	std::string origRightPart = "";

@@ -27,9 +27,9 @@ std::string Formatter::BinStringToAscii(std::string input) {
 
     std::string output;
 
-    for (size_t i = 0;i < input.length(); ++i)
+    for (size_t i = 0;i < input.length(); i+=8)
     {
-        std::string charRep = CharToBinString(input[i]);
+        char charRep = BinStringToChar(input.substr(i, 8));
 
         output += charRep;
     }
