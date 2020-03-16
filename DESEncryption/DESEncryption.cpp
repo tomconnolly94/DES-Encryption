@@ -11,7 +11,6 @@
 int main()
 {
 	//declare objects
-	KeyCalculator keycalculator;
 	Encryptor encryptor;
 
 	//hardcode decimal key
@@ -20,8 +19,8 @@ int main()
 
 	//calculate all required keys
 	key = Formatter::AsciiToBinString(key);
-	key = keycalculator.InitalPermutation(key);
-	std::vector<std::string> roundKeys = keycalculator.CalculateRoundKeys(key);
+	key = KeyCalculator::InitalPermutation(key);
+	std::vector<std::string> roundKeys = KeyCalculator::CalculateRoundKeys(key);
 
 	//encrypt plaintext and capture output 
 	//IMPORTANT: input must be 64 bits long

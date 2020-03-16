@@ -9,4 +9,7 @@ public:
 	static int SBoxPermutationTable[8][4][16];
 	static std::vector<int> StraightPermutationTable;
 	static std::vector<int> FinalPermutationTable;
+	static std::vector<int> KeyIntialPermutationTable;
+	static int KeyShiftTable[16];
+	static std::vector<int> KeyCompressionPermutationTable;
 };

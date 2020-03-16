@@ -5,7 +5,7 @@
 class KeyCalculator {
 public:
 	KeyCalculator();
-	std::string InitalPermutation(std::string);
-	std::vector<std::string> CalculateRoundKeys(std::string);
+	static std::string InitalPermutation(std::string keyInput);
+	static std::vector<std::string> CalculateRoundKeys(std::string keyInput);
 private:
 };

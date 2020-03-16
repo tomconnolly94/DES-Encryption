@@ -68,11 +68,11 @@ std::string Encryptor::SBoxPermutation(std::string input) {
 	std::string output = "";
 
 	for (int sBoxIndex = 0; sBoxIndex < 8; ++sBoxIndex) {
-		//get sbox co-ordinates
-		int yCoord = Util::ConvertBinaryToDecimal("" + input[0] + input[5]);
+		////get sbox co-ordinates
+		int yCoord = Util::ConvertBinaryToDecimal(input.substr(0, 1) + input.substr(5, 1));
 		int xCoord = Util::ConvertBinaryToDecimal(input.substr(1, 4));
 
-		output += PermutationTable::SBoxPermutationTable[sBoxIndex][yCoord][xCoord];
+		output += Util::ConvertDecimalToBinary(PermutationTable::SBoxPermutationTable[sBoxIndex][yCoord][xCoord], 4);
 		input = input.substr(6);
 	}
 	return output;

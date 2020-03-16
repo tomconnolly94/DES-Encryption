@@ -9,5 +9,6 @@ public:
 	static std::vector<std::string> HalfVector(std::string input);
 	static std::string XOR(std::string inputA, std::string inputB);
 	static int ConvertBinaryToDecimal(std::string strInput);
+	static std::string ConvertDecimalToBinary(int strInput, int requiredLength);
 private:
 };

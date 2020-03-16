@@ -57,3 +57,21 @@ int Util::ConvertBinaryToDecimal(std::string strInput)
 	}
 	return decimalNumber;
 }
+
+std::string Util::ConvertDecimalToBinary(int strInput, int requiredLength)
+{
+	std::string output;
+	for (int i = 0; strInput > 0; ++i)
+	{
+		output += std::to_string(strInput % 2);
+		strInput = strInput / 2;
+	}
+
+	int paddingBitsRequired = requiredLength - output.size();
+
+	for (int paddingIndex = 0; paddingIndex < paddingBitsRequired; ++paddingIndex) {
+		output = "0" + output;
+	}
+
+	return output;
+}
