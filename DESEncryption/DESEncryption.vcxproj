@@ -147,18 +147,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DESEncryption.cpp" />
+    <ClCompile Include="DESEncryptionEngine.cpp" />
     <ClCompile Include="Encryptor.cpp" />
     <ClCompile Include="Formatter.cpp" />
     <ClCompile Include="KeyCalculator.cpp" />
     <ClCompile Include="KeyCalculator.h" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="PermutationTable.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DESEncryptionEngine.h" />
     <ClInclude Include="Encryptor.h" />
     <ClInclude Include="Formatter.h" />
     <ClInclude Include="PermutationTable.h" />
+    <ClInclude Include="UserInterface.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

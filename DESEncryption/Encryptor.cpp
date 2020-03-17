@@ -8,8 +8,6 @@
 #include "Util.h"
 #include "PermutationTable.h"
 
-Encryptor::Encryptor() {};
-
 std::string Encryptor::Encrypt(std::string input, std::vector<std::string> roundKeys) {
 
 	//initial permutation

@@ -10,5 +10,6 @@ public:
 	static std::string XOR(std::string inputA, std::string inputB);
 	static int ConvertBinaryToDecimal(std::string strInput);
 	static std::string ConvertDecimalToBinary(int strInput, int requiredLength);
+	static std::string ConcatVector(std::vector<std::string> input);
 private:
 };

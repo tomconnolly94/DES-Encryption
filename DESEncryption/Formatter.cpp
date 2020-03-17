@@ -44,7 +44,6 @@ char Formatter::BinStringToChar(std::string input) {
 
 std::vector<std::string> Formatter::FormatInputForEncryption(std::string input) {
 
-    input = Formatter::AsciiToBinString(input);
     std::vector<std::string> inputBlocks;
 
     for (int inputSplittingIndex = 0; inputSplittingIndex < input.size(); inputSplittingIndex += 64) {

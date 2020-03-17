@@ -67,3 +67,13 @@ std::string Util::ConvertDecimalToBinary(int strInput, int requiredLength)
 
 	return output;
 }
+
+
+std::string Util::ConcatVector(std::vector<std::string> input) {
+	std::string output = "";
+	//concat vector
+	for (int inputBlockIndex = 0; inputBlockIndex < input.size(); ++inputBlockIndex) {
+		output += input[inputBlockIndex];
+	}
+	return output;
+}
