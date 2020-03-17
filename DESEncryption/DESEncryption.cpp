@@ -8,6 +8,16 @@
 #include "KeyCalculator.h"
 #include "Encryptor.h"
 
+
+std::string concatVector(std::vector<std::string> input) {
+	std::string output = "";
+	//concat vector
+	for (int inputBlockIndex = 0; inputBlockIndex < input.size(); ++inputBlockIndex) {
+		output += input[inputBlockIndex];
+	}
+	return output;
+}
+
 int main()
 {
 	//declare objects
@@ -15,7 +25,7 @@ int main()
 
 	//hardcode decimal key
 	std::string key = "qwertyui";
-	std::string input = "Hello my name is Tom.";
+	std::string input = "Hello my";
 
 	//calculate all required keys
 	key = Formatter::AsciiToBinString(key);
@@ -25,13 +35,25 @@ int main()
 	//encrypt plaintext and capture output 
 	//IMPORTANT: input must be 64 bits long
 	std::vector<std::string> inputBlocks = Formatter::FormatInputForEncryption(input);
-	std::string output;
+	std::vector<std::string> outputBlocksCipherText, outputBlocksPlainText;
 
+	//attempt encryption
 	for (int inputBlockIndex = 0; inputBlockIndex < inputBlocks.size(); ++inputBlockIndex) {
-		output += encryptor.Encrypt(inputBlocks[inputBlockIndex], roundKeys);
+		outputBlocksCipherText.push_back(encryptor.Encrypt(inputBlocks[inputBlockIndex], roundKeys));
 	}
 
-	output = Formatter::BinStringToAscii(output);
+	std::string ciphertext = concatVector(outputBlocksCipherText);
+	ciphertext = Formatter::BinStringToAscii(ciphertext);
+	std::cout << "Ciphertext: " << ciphertext << std::endl;
 
-	std::cout << "Ciphertext: " << output << std::endl;
+	std::reverse(roundKeys.begin(), roundKeys.end());
+
+	//attempt decryption
+	for (int inputBlockIndex = 0; inputBlockIndex < outputBlocksCipherText.size(); ++inputBlockIndex) {
+		outputBlocksPlainText.push_back(encryptor.Encrypt(outputBlocksCipherText[inputBlockIndex], roundKeys));
+	}
+
+	std::string output = concatVector(outputBlocksPlainText);
+	output = Formatter::BinStringToAscii(output);
+	std::cout << "Plaintext: " << output << std::endl;
 }
