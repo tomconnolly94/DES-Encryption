@@ -1,15 +1,14 @@
 #include "Util.h"
+#include <bitset>
 
 std::string Util::ExecutePermutation(std::string input, std::vector<int> permutationTable) {
 
-	std::string outputKey = "";
+	std::string output = "";
 
 	for (int index = 0; index < permutationTable.size(); ++index) {
-		const unsigned __int64 keyIndex = permutationTable[index];
-		char translation = input[keyIndex - 1];
-		outputKey += input[(const unsigned __int64)permutationTable[index] - 1];
+		output += input[(const unsigned __int64)permutationTable[index] - 1];
 	}
-	return outputKey;
+	return output;
 }
 
 std::string Util::BitShiftLeft(std::string shiftee, int numShifts) {
@@ -60,18 +59,11 @@ int Util::ConvertBinaryToDecimal(std::string strInput)
 
 std::string Util::ConvertDecimalToBinary(int strInput, int requiredLength)
 {
-	std::string output;
-	for (int i = 0; strInput > 0; ++i)
-	{
-		output += std::to_string(strInput % 2);
-		strInput = strInput / 2;
-	}
+	const int initialBitNum = 8;
+	int bitsToCull = initialBitNum - requiredLength;
 
-	int paddingBitsRequired = requiredLength - output.size();
-
-	for (int paddingIndex = 0; paddingIndex < paddingBitsRequired; ++paddingIndex) {
-		output = "0" + output;
-	}
+	std::string output = std::bitset<initialBitNum>(int(strInput)).to_string();
+	output = output.substr(bitsToCull);
 
 	return output;
 }
