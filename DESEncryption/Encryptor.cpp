@@ -38,7 +38,15 @@ std::string Encryptor::Encrypt(std::string input, std::vector<std::string> round
 		rightPart = ExecuteStraightPermutation(rightPart);
 
 		rightPart = Util::XOR(rightPart, leftPart);
-		leftPart = origRightPart;
+
+
+		if (roundIndex == (roundKeys.size() - 1)) {
+			leftPart = rightPart;
+			rightPart = origRightPart;
+		}
+		else {
+			leftPart = origRightPart;
+		}
 	}
 
 	//combine and return
