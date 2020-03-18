@@ -45,6 +45,9 @@
     <ClCompile Include="DESEncryptionEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FIleInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Formatter.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files\Data</Filter>
     </ClInclude>
     <ClInclude Include="DESEncryptionEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

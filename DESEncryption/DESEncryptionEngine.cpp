@@ -2,7 +2,6 @@
 
 #include<vector>
 #include <iostream>
-#include <vector>
 
 #include "DESEncryptionEngine.h"
 #include "Formatter.h"

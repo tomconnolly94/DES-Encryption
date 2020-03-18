@@ -51,7 +51,7 @@ int Util::ConvertBinaryToDecimal(std::string strInput)
 	{
 		remainder = input % 10;
 		input /= 10;
-		decimalNumber += remainder * pow(2, i);
+		decimalNumber += remainder * (int) pow(2, i);
 		++i;
 	}
 	return decimalNumber;

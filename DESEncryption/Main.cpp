@@ -1,36 +1,48 @@
-// DESEncryption.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Main.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
-#include<vector>
 #include <iostream>
-#include <vector>
-#include <getopt.h>
+#include "DESEncryptionEngine.h"
+#include "FIleInterface.h"
 
-#include "UserInterface.h"
+int main(int argc, char* argv[]) {
 
+    DESEncryptionEngine desEncryptionEngine;
+    std::string encryptionKey = "dhysjfmx"; //must be 8 characters long
+    char encryptedExtension[] = ".encrypted";
 
-main(int argc, char* argv[]) {
-    int option;
-    // put ':' at the starting of the string so compiler can distinguish between '?' and ':'
-    while ((option = getopt(argc, argv, ":if:lrx")) != -1) { //get option from the getopt() method
-        switch (option) {
-            //For option i, r, l, print that these are options
-        case 'i':
-        case 'l':
-        case 'r':
-            printf("Given Option: %c\n", option);
-            break;
-        case 'f': //here f is used for some file name
-            printf("Given File: %s\n", optarg);
-            break;
-        case ':':
-            printf("option needs a value\n");
-            break;
-        case '?': //used for some unknown options
-            printf("unknown option: %c\n", optopt);
-            break;
+    for (int argIndex = 1; argIndex < argc; ++argIndex) {
+
+        char* file = argv[argIndex];
+        std::string fileContent = FileInterface::ReadFileAsBits(file);
+        std::string output = desEncryptionEngine.RunEncryptionEngine(encryptionKey, fileContent);
+        FileInterface::WriteBitsToFile(output, file);
+        
+        std::string fileString(file);
+        std::string extensionString(encryptedExtension);
+
+        bool found = fileString.find(extensionString);
+        char * newFileName = NULL;
+
+        if (!found) {
+            char subbuff[5];
+            memcpy(subbuff, &file[10], 4);
+            subbuff[4] = '\0';
         }
+        else{
+            // Determine new size
+            int newSize = strlen(file) + strlen(encryptedExtension) + 1;
+
+            // Allocate new buffer
+            newFileName = (char*)malloc(newSize);
+
+            // do the copy and concat
+            strcpy_s(newFileName, strlen(file), file);
+            strcat_s(newFileName, strlen(encryptedExtension), encryptedExtension); // or strncat
+        }
+
+        std::rename(file, newFileName);
     }
-    for (; optind < argc; optind++) { //when some extra arguments are passed
-        printf("Given extra arguments: %s\n", argv[optind]);
-    }
+
+
+    return 0;
 }

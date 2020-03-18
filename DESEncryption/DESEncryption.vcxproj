@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="DESEncryptionEngine.cpp" />
     <ClCompile Include="Encryptor.cpp" />
+    <ClCompile Include="FileInterface.cpp" />
     <ClCompile Include="Formatter.cpp" />
     <ClCompile Include="KeyCalculator.cpp" />
     <ClCompile Include="KeyCalculator.h" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="DESEncryptionEngine.h" />
     <ClInclude Include="Encryptor.h" />
+    <ClInclude Include="FileInterface.h" />
     <ClInclude Include="Formatter.h" />
     <ClInclude Include="PermutationTable.h" />
     <ClInclude Include="Util.h" />
