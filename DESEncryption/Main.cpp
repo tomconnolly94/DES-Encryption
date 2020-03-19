@@ -20,27 +20,19 @@ int main(int argc, char* argv[]) {
         std::string fileString(file);
         std::string extensionString(encryptedExtension);
 
-        bool found = fileString.find(extensionString);
-        char * newFileName = NULL;
+        std::size_t found = fileString.find(extensionString);
+        std::string newFileName;
 
-        if (!found) {
-            char subbuff[5];
-            memcpy(subbuff, &file[10], 4);
-            subbuff[4] = '\0';
+        if (found != std::string::npos) {
+            newFileName = fileString.substr(0, fileString.size() - extensionString.size());
         }
         else{
-            // Determine new size
-            int newSize = strlen(file) + strlen(encryptedExtension) + 1;
-
-            // Allocate new buffer
-            newFileName = (char*)malloc(newSize);
-
-            // do the copy and concat
-            strcpy_s(newFileName, strlen(file), file);
-            strcat_s(newFileName, strlen(encryptedExtension), encryptedExtension); // or strncat
+            newFileName = fileString + extensionString;
         }
 
-        std::rename(file, newFileName);
+        const char* newFileNamePointer = newFileName.c_str();
+
+        std::rename(file, newFileNamePointer);
     }
 
 
