@@ -8,33 +8,35 @@ int main(int argc, char* argv[]) {
 
     DESEncryptionEngine desEncryptionEngine;
     std::string encryptionKey = "dhysjfmx"; //must be 8 characters long
-    char encryptedExtension[] = ".encrypted";
+    std::string encryptedExtension = ".encrypted";
 
     for (int argIndex = 1; argIndex < argc; ++argIndex) {
 
         char* file = argv[argIndex];
+        bool encrypting = true;
+        std::string fileString(file);
+        std::size_t found = fileString.find(encryptedExtension);
+
+        if (true || found != std::string::npos) {
+            encrypting = false;
+        }
+
         std::string fileContent = FileInterface::ReadFileAsBits(file);
-        std::string output = desEncryptionEngine.RunEncryptionEngine(encryptionKey, fileContent);
+        std::string output = desEncryptionEngine.RunEncryptionEngine(encryptionKey, fileContent, encrypting);
         FileInterface::WriteBitsToFile(output, file);
         
-        std::string fileString(file);
-        std::string extensionString(encryptedExtension);
 
-        std::size_t found = fileString.find(extensionString);
         std::string newFileName;
 
-        if (found != std::string::npos) {
-            newFileName = fileString.substr(0, fileString.size() - extensionString.size());
+        if (encrypting) {
+            newFileName = fileString + encryptedExtension;
         }
         else{
-            newFileName = fileString + extensionString;
+            newFileName = fileString.substr(0, fileString.size() - encryptedExtension.size());
         }
 
         const char* newFileNamePointer = newFileName.c_str();
-
-        std::rename(file, newFileNamePointer);
+        //std::rename(file, newFileNamePointer);
     }
-
-
     return 0;
 }

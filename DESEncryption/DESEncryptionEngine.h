@@ -3,6 +3,6 @@
 class DESEncryptionEngine {
 public:
 	DESEncryptionEngine();
-	std::string RunEncryptionEngine(std::string asciiKey, std::string binaryPlainTextBlocks);
+	std::string RunEncryptionEngine(std::string asciiKey, std::string binaryPlainTextBlocks, bool encrypting);
 private:
 };

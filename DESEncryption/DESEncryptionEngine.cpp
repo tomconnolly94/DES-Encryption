@@ -18,7 +18,7 @@ DESEncryptionEngine::DESEncryptionEngine(){}
  * @param binaryPlainTextBlocks input plaintext as binary string of any length
  * @return output ciphertext text as binary string of x*64 length
  */
-std::string DESEncryptionEngine::RunEncryptionEngine(std::string asciiKey, std::string binaryPlainTextBlocks)
+std::string DESEncryptionEngine::RunEncryptionEngine(std::string asciiKey, std::string binaryPlainTextBlocks, bool encrypting)
 {
 	//hardcode decimal key
 	std::string key = "qwertyui";
@@ -28,6 +28,10 @@ std::string DESEncryptionEngine::RunEncryptionEngine(std::string asciiKey, std::
 	key = Formatter::AsciiToBinString(key);
 	key = KeyCalculator::InitalPermutation(key);
 	std::vector<std::string> roundKeys = KeyCalculator::CalculateRoundKeys(key);
+
+	if (!encrypting) {
+		std::reverse(roundKeys.begin(), roundKeys.end());
+	}
 
 	std::vector<std::string> inputBlocks = Formatter::FormatInputForEncryption(input);
 	std::vector<std::string> outputBlocksCipherText;
