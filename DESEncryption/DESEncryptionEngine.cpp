@@ -22,7 +22,6 @@ std::string DESEncryptionEngine::RunEncryptionEngine(std::string asciiKey, std::
 {
 	//hardcode decimal key
 	std::string key = "qwertyui";
-	std::string input = "Hello my";
 
 	//calculate all required keys
 	key = Formatter::AsciiToBinString(key);
@@ -33,7 +32,7 @@ std::string DESEncryptionEngine::RunEncryptionEngine(std::string asciiKey, std::
 		std::reverse(roundKeys.begin(), roundKeys.end());
 	}
 
-	std::vector<std::string> inputBlocks = Formatter::FormatInputForEncryption(input);
+	std::vector<std::string> inputBlocks = Formatter::FormatInputForEncryption(binaryPlainTextBlocks);
 	std::vector<std::string> outputBlocksCipherText;
 
 	//attempt encryption

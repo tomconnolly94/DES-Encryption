@@ -2,6 +2,8 @@
 !/.gitignore
 
 Debug
+Release
+x64
 
 .log
 .tlog
