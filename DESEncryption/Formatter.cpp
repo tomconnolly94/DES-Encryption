@@ -41,7 +41,6 @@ char Formatter::BinStringToChar(std::string input) {
     return temp.to_ulong();
 }
 
-
 std::vector<std::string> Formatter::FormatInputForEncryption(std::string input) {
 
     std::vector<std::string> inputBlocks;
