@@ -4,8 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DESEncryption", "DESEncryption\DESEncryption.vcxproj", "{DC10AF02-B14D-40B0-8129-4E38087733A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E1E428F-8350-4170-A2D7-E495839D130D} = {8E1E428F-8350-4170-A2D7-E495839D130D}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DESEncryptionTest", "DESEncryptionTest\DESEncryptionTest.vcxproj", "{E7E3CF2A-D344-4CA3-9A4D-2276CAA31DF6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppCommonTProj", "cppcommontproj\CppCommonTProj\CppCommonTProj.vcxproj", "{8E1E428F-8350-4170-A2D7-E495839D130D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppCommonTProjTest", "cppcommontproj\CppCommonTProjTest\CppCommonTProjTest.vcxproj", "{B98FECB3-CB57-4E89-A645-6E31B4BDB9DF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E1E428F-8350-4170-A2D7-E495839D130D} = {8E1E428F-8350-4170-A2D7-E495839D130D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +41,22 @@ Global
 		{E7E3CF2A-D344-4CA3-9A4D-2276CAA31DF6}.Release|x64.Build.0 = Release|x64
 		{E7E3CF2A-D344-4CA3-9A4D-2276CAA31DF6}.Release|x86.ActiveCfg = Release|Win32
 		{E7E3CF2A-D344-4CA3-9A4D-2276CAA31DF6}.Release|x86.Build.0 = Release|Win32
+		{8E1E428F-8350-4170-A2D7-E495839D130D}.Debug|x64.ActiveCfg = Debug|x64
+		{8E1E428F-8350-4170-A2D7-E495839D130D}.Debug|x64.Build.0 = Debug|x64
+		{8E1E428F-8350-4170-A2D7-E495839D130D}.Debug|x86.ActiveCfg = Debug|Win32
+		{8E1E428F-8350-4170-A2D7-E495839D130D}.Debug|x86.Build.0 = Debug|Win32
+		{8E1E428F-8350-4170-A2D7-E495839D130D}.Release|x64.ActiveCfg = Release|x64
+		{8E1E428F-8350-4170-A2D7-E495839D130D}.Release|x64.Build.0 = Release|x64
+		{8E1E428F-8350-4170-A2D7-E495839D130D}.Release|x86.ActiveCfg = Release|Win32
+		{8E1E428F-8350-4170-A2D7-E495839D130D}.Release|x86.Build.0 = Release|Win32
+		{B98FECB3-CB57-4E89-A645-6E31B4BDB9DF}.Debug|x64.ActiveCfg = Debug|x64
+		{B98FECB3-CB57-4E89-A645-6E31B4BDB9DF}.Debug|x64.Build.0 = Debug|x64
+		{B98FECB3-CB57-4E89-A645-6E31B4BDB9DF}.Debug|x86.ActiveCfg = Debug|Win32
+		{B98FECB3-CB57-4E89-A645-6E31B4BDB9DF}.Debug|x86.Build.0 = Debug|Win32
+		{B98FECB3-CB57-4E89-A645-6E31B4BDB9DF}.Release|x64.ActiveCfg = Release|x64
+		{B98FECB3-CB57-4E89-A645-6E31B4BDB9DF}.Release|x64.Build.0 = Release|x64
+		{B98FECB3-CB57-4E89-A645-6E31B4BDB9DF}.Release|x86.ActiveCfg = Release|Win32
+		{B98FECB3-CB57-4E89-A645-6E31B4BDB9DF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

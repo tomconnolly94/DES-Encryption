@@ -30,9 +30,6 @@
     <ClCompile Include="KeyCalculator.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Util.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Encryptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -45,15 +42,12 @@
     <ClCompile Include="DESEncryptionEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FIleInterface.cpp">
+    <ClCompile Include="DESEncryptionUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Formatter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Encryptor.h">
@@ -65,7 +59,7 @@
     <ClInclude Include="DESEncryptionEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FileInterface.h">
+    <ClInclude Include="DESEncryptionUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

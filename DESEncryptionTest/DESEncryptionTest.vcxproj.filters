@@ -18,13 +18,13 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UtilTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FormatterTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="KeyCalculatorTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DESEncryptionUtilTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

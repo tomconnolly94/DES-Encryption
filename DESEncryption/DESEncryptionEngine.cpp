@@ -7,7 +7,7 @@
 #include "Formatter.h"
 #include "KeyCalculator.h"
 #include "Encryptor.h"
-#include "Util.h"
+#include "DESEncryptionUtil.h"
 
 DESEncryptionEngine::DESEncryptionEngine(){}
 
@@ -40,5 +40,5 @@ std::string DESEncryptionEngine::RunEncryptionEngine(std::string asciiKey, std::
 		outputBlocksCipherText.push_back(Encryptor::Encrypt(inputBlocks[inputBlockIndex], roundKeys));
 	}
 
-	return Util::ConcatVector(outputBlocksCipherText);
+	return DESEncryptionUtil::ConcatVector(outputBlocksCipherText);
 }

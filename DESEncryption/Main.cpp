@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include "DESEncryptionEngine.h"
-#include "FIleInterface.h"
+#include "FileInterface.h"
 
 int main(int argc, char* argv[]) {
 
